@@ -15,8 +15,24 @@
  * @param {string[]} points
  * @returns {(number|undefined)}
  */
+
 function getWinner(points) {
-    return undefined;
+    let pointsFirstTeam = 0;
+    let pointsSecondTeam = 0;
+
+    for (let quarterPoints of points) {
+        pointsFirstTeam += Number(quarterPoints.slice(0, quarterPoints.indexOf('-')));
+        pointsSecondTeam += Number(quarterPoints.slice(quarterPoints.indexOf('-') + 1));        
+    }
+
+    if (pointsFirstTeam > pointsSecondTeam) {
+        return 1;
+    }
+
+    if (pointsFirstTeam < pointsSecondTeam) {
+        return 2;
+    }
+        
 }
 
 module.exports = getWinner;
