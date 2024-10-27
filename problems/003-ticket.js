@@ -14,7 +14,13 @@
  * @returns {boolean}
  */
 function checkTicket(number) {
-    return undefined;
+    let arrayNumerals = String(number).split('');
+    arrayNumerals = arrayNumerals.map(Number);
+
+    let firstSum = arrayNumerals[0] + arrayNumerals[1] + arrayNumerals[2];
+    let secondSum = arrayNumerals[3] + arrayNumerals[4] + arrayNumerals[5];
+    
+    return (firstSum === secondSum);        
 }
 
 module.exports = checkTicket;
