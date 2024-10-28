@@ -12,7 +12,12 @@
  * @returns {undefined|number}
  */
 function checkBusTour(bridges) {
-    return -1;
+
+    numSmallBrige = bridges.findIndex(item => item <= 512) + 1;
+
+    if (numSmallBrige > 0){
+        return numSmallBrige;
+    }
 }
 
 module.exports = checkBusTour;
