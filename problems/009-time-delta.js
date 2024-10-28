@@ -16,8 +16,21 @@
  * @param {string} y
  * @returns {number} разница между x и y в секундах
  */
+function getTimeToSecond (stringTime) {
+    let arrayTime = stringTime.split(':');
+
+    let hours = Number(arrayTime[0]);
+    let minutes = Number(arrayTime[1]);
+    let seconds = Number(arrayTime[2])
+
+    let secondsTime = hours * 3600 + minutes * 60 + seconds;
+
+    return secondsTime;
+} 
+
 function getTimeDelta(x, y) {
-    return undefined;
+
+    return getTimeToSecond(y) - getTimeToSecond(x);
 }
 
 module.exports = getTimeDelta;
