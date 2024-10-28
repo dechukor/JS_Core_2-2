@@ -13,7 +13,8 @@
  * @returns {boolean}
  */
 function isPalindrome(value) {
-    return undefined;
+    
+    return value.split('').reverse().join('') === value;
 }
 
 module.exports = isPalindrome;
