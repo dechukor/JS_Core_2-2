@@ -12,8 +12,34 @@
  * @param {number[]} b
  * @returns {number[]}
  */
+function deleteRepeatItem (array) {
+    for (let i = 0; i < array.length; i++) {
+        for (let j = i + 1; j < array.length;) {
+            if (array[i] === array[j]) {
+                array.splice(j,1);                
+            } else {
+                j++;
+            }            
+        }
+    }
+    return array; 
+}
+
 function union(a, b) {
-    return undefined;
+    let c = [];
+    
+    a = deleteRepeatItem(a);
+    b = deleteRepeatItem(b);
+
+    for (i = 0; i < a.length; i++) {
+        for (j = 0; j < b.length; j++) {
+            if (a[i] === b[j]) {
+                c.unshift(a[i]);
+            }
+        }
+    }
+
+    return c.sort((a, b) => a - b);
 }
 
 module.exports = union;
