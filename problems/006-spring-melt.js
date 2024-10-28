@@ -18,7 +18,23 @@
  * @returns {number}
  */
 function getSpringMeltStreak(temperature) {
-    return undefined;
+
+    let countDayPeriod = 0;
+    let maxCountDayPeriod = 0;
+
+    for (let i = 0; i < temperature.length; i++) {
+        while (temperature[i] > 0) {
+            countDayPeriod += 1;
+            i++;
+        }
+
+        if (countDayPeriod > maxCountDayPeriod) {
+            maxCountDayPeriod = countDayPeriod;
+            countDayPeriod = 0;
+        }         
+    }
+
+    return maxCountDayPeriod;
 }
 
 module.exports = getSpringMeltStreak;
