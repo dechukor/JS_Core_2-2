@@ -17,7 +17,26 @@
  * @returns {number}
  */
 function fibonacci(n) {
-    return undefined;
+
+    let fibNum = 0;    
+    let ak1 = 0;
+    let ak = 1;
+
+    if (n === 0) {
+        return 0;
+    }
+
+    if (n === 1) {
+        return 1;
+    }
+
+    for (let i = 2; i <= n; i++) {
+        fibNum = ak1 + ak;
+        ak1 = ak;
+        ak = fibNum;
+    }
+
+    return fibNum;
 }
 
 module.exports = fibonacci;
