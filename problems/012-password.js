@@ -18,7 +18,32 @@
  * @returns {boolean}
  */
 function validatePassword(password) {
-    return undefined;
+
+    let arrayPassword = password.split('');    
+
+    if ( password.length < 7) { 
+        return false;
+    }
+
+    let passHasNum = arrayPassword.some((item) => !isNaN(item));
+
+    if ( passHasNum === false) { 
+        return false;
+    }
+
+    let passHasLowCase = arrayPassword.some((item) => (item.toLowerCase() != item.toUpperCase()) && (item.toLowerCase() === item));
+
+    if ( passHasLowCase === false) { 
+        return false;
+    }
+    
+    let passHasUpCase = arrayPassword.some((item) => (item.toLowerCase() != item.toUpperCase()) && (item.toUpperCase() === item));
+
+    if (passHasUpCase === false) { 
+        return false;
+    }
+
+    return true;    
 }
 
 module.exports = validatePassword;
