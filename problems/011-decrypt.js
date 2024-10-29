@@ -16,7 +16,23 @@
  * @returns {string}
  */
 function decrypt(secret) {
-    return undefined;
+    
+    let arraySecret = secret.split('');
+
+    arraySecret.forEach((item, index) => {
+
+        if (item === 'z') {
+            arraySecret[index] = 'a';
+        } else if (item === ' '){
+        }
+        else {
+            arraySecret[index] = String.fromCharCode(item.charCodeAt() + 1);
+        }
+        
+    })
+
+    arraySecret = arraySecret.join('');
+    return arraySecret;
 }
 
 module.exports = decrypt;
