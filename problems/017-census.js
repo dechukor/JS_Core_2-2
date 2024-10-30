@@ -13,7 +13,21 @@
  * @returns {undefined|number}
  */
 function census(list) {
-    return -1;
+   
+    let oldestManIndex;
+
+    let oldestMan = list.reduce(function(acc, item, ind) {
+        if ((item.gender === 'Male') && (item.age > acc)) {
+            
+            oldestManIndex = ind + 1;
+            return acc = item.age;
+
+        } else {
+            return acc;            
+        }
+      }, 0);
+
+    return oldestManIndex;
 }
 
 module.exports = census;
