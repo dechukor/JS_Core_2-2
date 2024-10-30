@@ -14,8 +14,22 @@
  * @param {string} y
  * @returns {boolean}
  */
+function sortLetterinWord(word){
+
+    return word.toLowerCase().split('').sort().join('');
+
+}
+
 function anagram(x, y) {
-    return undefined;
+
+    if (x.length != y.length || x.length === 0 || y.length === 0) {
+
+        return false;
+        
+    }
+
+    return sortLetterinWord(x) === sortLetterinWord(y);
+
 }
 
 module.exports = anagram;
