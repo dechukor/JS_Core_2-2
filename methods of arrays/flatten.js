@@ -5,5 +5,7 @@
     Например, flatten([1, [2, 3], [4, [5, 6]]]) должна вернуть [1, 2, 3, 4, 5, 6].
 * */
 function flatten(arr) {
-    // Your code
+    return arr.flat(Infinity);
 }
+
+console.log(flatten([1, [2, 3], [4, [5, 6]]]));
