@@ -27,6 +27,17 @@
  Если массив пустой, то функция должна вернуть null.
  Если массив содержит только один элемент, то функция должна вернуть связный список из одного узла.
  */
-function createList(arr) {
-    // Your code
+function createList(arr) {   
+    let arrResult = arr.reduceRight(function (next, value){    
+      return {
+        value: value,
+        next: next
+      }
+    }, null);
+
+  
+    return arrResult;
+
 }
+
+console.log(createList([1, 2, 3, 4, 5]));
