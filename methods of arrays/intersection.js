@@ -5,5 +5,18 @@
  * @return {number[]} - массив, содержащий только элементы, которые есть в обоих массивах
  */
 function intersect(arr1, arr2) {
-    // ваш код здесь
+    
+    let arrResult = [];
+
+    for (i = 0; i < arr1.length; i++){
+        if (arr2.indexOf(arr1[i]) != -1) {
+            arrResult.push(arr1[i]);
+        }
+    }
+    
+    return arrResult;
+
 }
+
+console.log(intersect([1, 2, 3, 4, 5, 6], [1, 6, 13, 4, 5, 5, 6]));
+
