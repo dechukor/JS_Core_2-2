@@ -5,6 +5,21 @@
  равно ключу. Например, groupBy([{id: 1, name: 'Alice'}, {id: 2, name: 'Bob'}, {id: 3, name: 'Alice'}], 'name') должна
  вернуть {Alice: [{id: 1, name: 'Alice'}, {id: 3, name: 'Alice'}], Bob: [{id: 2, name: 'Bob'}]}.
  * */
-function groupBy(arr) {
-    // Your code
+function groupBy(arr, key) {
+
+    let objResult = {};
+    
+    for (let item of arr) {
+        // console.log (item[key]);
+        if(objResult[item[key]]) {
+            objResult[item[key]].push(item); 
+        } else {
+            objResult[item[key]] = [item];
+        }              
+    }
+
+    return objResult;
+
 }
+
+console.log(groupBy([{id: 1, name: 'Alice'}, {id: 2, name: 'Bob'}, {id: 3, name: 'Alice'}], 'name'))
