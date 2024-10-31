@@ -4,7 +4,13 @@
  * @return {string} - строковое представление объекта
  */
 function objectToString(obj) {
-    // ваш код здесь
+     
+    let strResult;
+
+    strResult = Object.entries(obj).map(el => (el.join('='))).join('&');
+
+    return strResult;
+    
 }
 
 // Примеры:
