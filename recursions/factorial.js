@@ -3,8 +3,14 @@
  * @param {number} n - входное число
  * @return {number} - факториал числа
  */
+
 function factorial(n) {
-    // ваш код здесь
+    
+    if (n <= 1) {
+        return 1;
+    }
+
+    return n * factorial(n - 1);
 }
 
 // Примеры:
