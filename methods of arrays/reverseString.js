@@ -4,5 +4,7 @@
  * @return {string} - строка, обращенная задом наперед
  */
 function reverseString(str) {
-    // ваш код здесь
+    return str.split('').reverse().join('');
 }
+
+console.log(reverseString('А роза упала на лапу Азора'))
