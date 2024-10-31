@@ -4,8 +4,19 @@
  * @param {number} b - второе число
  * @return {number} - наибольший общий делитель
  */
+
 function gcd(a, b) {
-    // ваш код здесь
+    
+    if (a == b) {
+        return a;
+    }    
+    
+    if (a < b) {
+        return gcd(a, b - a);
+    } else {
+        return gcd(b, a - b);
+    }
+
 }
 
 // Примеры:
