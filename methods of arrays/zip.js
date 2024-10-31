@@ -5,5 +5,21 @@
  zip([1, 2, 3], ['a', 'b', 'c']) должна вернуть [[1, 'a'], [2, 'b'], [3, 'c']].
  * */
 function zip(arr1, arr2) {
-    // Your code
+   
+    let arrResult = [];
+    let lengthArrResult;
+
+    if (arr1.length < arr2.length) {
+        lengthArrResult = arr1.length;
+    } else {
+        lengthArrResult = arr2.length;
+    }
+    
+    for (let i = 0; i < lengthArrResult; i++){
+        arrResult[i] = [arr1[i], arr2[i]];
+    }
+    
+    return arrResult;
 }
+
+console.log(zip([1, 2, 3, 4, 5, 6], ['a', 'b', 'c', 'd']));
