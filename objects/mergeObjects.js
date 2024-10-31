@@ -6,7 +6,11 @@
  * @return {object} - новый объект, содержащий все свойства обоих объектов
  */
 function mergeObjects(obj1, obj2) {
-    // ваш код здесь
+    let objResult = {};
+
+    objResult = Object.assign(obj1, obj2);
+
+    return objResult;
 }
 
 // Примеры:
