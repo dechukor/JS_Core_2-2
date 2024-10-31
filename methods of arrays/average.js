@@ -4,5 +4,15 @@
  * @return {number} - среднее значение всех элементов массива
  */
 function average(arr) {
-    // ваш код здесь
+    
+    let arrSumItem = arr.reduce(function(acc, item, ind, arr) {
+        
+        return acc + item;
+
+    }, 0)
+
+    return arrSumItem / arr.length;
+    // return 1;
 }
+
+console.log(average([1, 2, 3, 2, 3, 1]));
