@@ -4,5 +4,8 @@
  * @return {number[]} - массив, содержащий наименьшее и наибольшее число в массиве
  */
 function minMax(arr) {
-    // ваш код здесь
+    arr.sort((a, b) => a - b);
+    return [arr.shift(), arr.pop()];
 }
+
+console.log(minMax([1, 2, 4, 0, 12, 3, 25, 34, 9, 0, 12]));
