@@ -11,8 +11,42 @@
  * @param {string} value
  * @returns {string}
  */
+
+function sortLetterinWord(word){
+
+    return word.toLowerCase().split('').sort().join('');
+
+}
+
 function searchAnagrams(value) {
-    return undefined;
+
+    let reg = /[^А-Яа-я\s]/g;
+
+    let onlyWords = value.replace(reg, '');
+    let arrayWords = onlyWords.split(' ');
+    let arrayWordsSort = [];
+
+    arrayWords.forEach(function(item, ind, arr){
+        
+        arrayWordsSort[ind] = sortLetterinWord(item);
+
+    })
+
+    let result = arrayWordsSort.reduce(function(acc, item, ind, arr) {
+
+        if (arr.indexOf(item) != arr.lastIndexOf(item)) {
+
+            return acc + arrayWords[ind] + ' ';  
+                      
+        }
+
+        return acc;
+
+    }, '') 
+
+    result = result.trimEnd();
+
+    return result;
 }
 
 module.exports = searchAnagrams;
