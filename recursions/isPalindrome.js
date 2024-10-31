@@ -4,7 +4,21 @@
  * @return {boolean} - true, если строка является палиндромом, и false в противном случае
  */
 function isPalindrome(str) {
-    // ваш код здесь
+    str = str.toLowerCase().replace(/[^А-Яа-яA-Za-z]/g, '');
+
+    if (str.at(0).toLowerCase() != str.at(-1).toLowerCase()) {
+
+        return false;
+
+    }
+
+    if (str.length < 2) {
+
+        return true;
+
+    }    
+
+    return isPalindrome(str.slice(1, -1));    
 }
 
 // Примеры:
