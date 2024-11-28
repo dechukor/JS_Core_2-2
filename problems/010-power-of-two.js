@@ -15,9 +15,9 @@ function getPower(n) {
 
     let power = 0;
 
-    while (n != 1) {
+    while (n !== 1) {
 
-        if (n % 2 != 0) {
+        if (n % 2 !== 0) {
             return;
         }
 

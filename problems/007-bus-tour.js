@@ -13,7 +13,7 @@
  */
 function checkBusTour(bridges) {
 
-    numSmallBrige = bridges.findIndex(item => item <= 512) + 1;
+    const numSmallBrige = bridges.findIndex(item => item <= 512) + 1;
 
     if (numSmallBrige > 0){
         return numSmallBrige;

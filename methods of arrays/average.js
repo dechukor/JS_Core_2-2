@@ -5,7 +5,7 @@
  */
 function average(arr) {
     
-    let arrSumItem = arr.reduce(function(acc, item, ind, arr) {
+    let arrSumItem = arr.reduce(function(acc, item) {
         
         return acc + item;
 

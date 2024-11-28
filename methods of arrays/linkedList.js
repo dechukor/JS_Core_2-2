@@ -34,8 +34,7 @@ function createList(arr) {
         next: next
       }
     }, null);
-
-  
+      
     return arrResult;
 
 }
